@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>jarslink-example</groupId>
+    <artifactId>jarslink-example</artifactId>
+    <version>0.0.1</version>
+  </parent>
+  <artifactId>jarslink-example-mysql</artifactId>
+  
+  <dependencies>
+		<!-- jarslink依赖包 -->
+		<dependency>
+			<groupId>com.alipay.jarslink</groupId>
+			<artifactId>jarslink-api</artifactId>
+			<version>1.6.1.20180301</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.32</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<!-- example -->
+		<dependency>
+			<groupId>jarslink-example</groupId>
+			<artifactId>jarslink-example-api</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>store-mysql</finalName>
+	</build>
+  
+</project>

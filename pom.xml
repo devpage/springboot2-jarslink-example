@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jarslink-example</groupId>
+  <artifactId>jarslink-example</artifactId>
+  <version>0.0.1</version>
+  <packaging>pom</packaging>
+  
+  <repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/libs-milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.0.0.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+  
+  <modules>
+  	<module>jarslink-example-api</module>
+  	<module>jarslink-example-redis</module>
+  	<module>jarslink-example-mysql</module>
+  	<module>jarslink-example-memory</module>
+  	<module>jarslink-example-web</module>
+  </modules>
+</project>
