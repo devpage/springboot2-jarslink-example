@@ -41,16 +41,16 @@ public class ActionController {
 		return orderString;
 	}
 	
-	@RequestMapping(value = "/get/{userId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/get/{key}", method = RequestMethod.GET)
 	@ResponseBody
-	public Object get(@PathVariable("userId") String userId) {
+	public Object get(@PathVariable("key") String key) {
 		// 查找模块-组装发票
 		Module findModule = moduleManager.find("demo-cache-service");
 		// 执行Action，数据交互
 		Action<ActionRequest, String> action = findModule.getAction("demoCache");
 		ActionRequest req = new ActionRequest();
 		req.setOpt(1);
-		req.setKey(userId);
+		req.setKey(key);
 		String orderString = action.execute(req);
 		return orderString;
 	}
