@@ -6,7 +6,7 @@ cd springboot2-jarslink-example
 mvn clean install
 ```
 
-** important
+
 
 #删除1行代码
 ```
