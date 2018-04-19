@@ -29,14 +29,15 @@ public class ActionController {
 	@RequestMapping(value = "/set/{key}/{val}", method = RequestMethod.GET)
 	@ResponseBody
 	public Object set(@PathVariable("key") String key,@PathVariable("val") String val) {
-		// 查找模块-组装发票
+		// 查找服务
 		Module findModule = moduleManager.find("demo-cache-service");
-		// 执行Action，数据交互
+		// 得到具体模块
 		Action<ActionRequest, String> action = findModule.getAction("demoCache");
 		ActionRequest req = new ActionRequest();
 		req.setOpt(0);
 		req.setKey(key);
 		req.setValue(val);
+		// 执行Action，数据交互
 		String orderString = action.execute(req);
 		return orderString;
 	}
@@ -44,9 +45,7 @@ public class ActionController {
 	@RequestMapping(value = "/get/{key}", method = RequestMethod.GET)
 	@ResponseBody
 	public Object get(@PathVariable("key") String key) {
-		// 查找模块-组装发票
 		Module findModule = moduleManager.find("demo-cache-service");
-		// 执行Action，数据交互
 		Action<ActionRequest, String> action = findModule.getAction("demoCache");
 		ActionRequest req = new ActionRequest();
 		req.setOpt(1);
