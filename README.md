@@ -8,12 +8,6 @@ cd springboot2-jarslink-example
 mvn clean install
 ```
 
-#删除[jarslink](https://github.com/alibaba/jarslink) 1行代码
-```
-com.alipay.jarslink.api.impl.SpringModule#clear
-	LogFactory.release(classLoader);  // 删除这1行
-```
-
 启动：
 mainClass jarslink.example.PlayJarsLink
 
